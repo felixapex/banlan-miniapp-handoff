@@ -1,0 +1,4 @@
+462b30c7d9fcad8b0271b812e711c2cd62930e668f5ae63d342a1f128439b6c0  miniapp-execution-offline-deps-2026-11-21.zip.001
+70efa3c3cd11b7b16845e17a4c12ce6f2346b6c3124c97c53822903b9403cbfb  miniapp-execution-offline-deps-2026-11-21.zip.002
+b118d4a8ed38042feff5bb89f1518891668d6fc40746c24d76582cdb7ed19b32  miniapp-execution-offline-deps-2026-11-21.zip.003
+305eb5d2d1a0b4f2ee7ab4b47e188f204252ef29c5d34b522894df019313b242  miniapp-execution-offline-deps-2026-11-21.zip.004
