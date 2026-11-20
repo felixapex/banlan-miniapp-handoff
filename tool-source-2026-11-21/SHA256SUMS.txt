@@ -1,3 +1,5 @@
+c8362d77679b060fa77f9cd6d4ace573059b29771c63a21797a706299ee4bd5c  miniapp-execution-importer-clean-source-v2-2026-11-21.zip
+b12878158f879eabf9f77d14f4d4ce2171175352895a1cecc902ad17babb3641  miniapp-execution-importer-clean-source-2026-11-21.zip
 462b30c7d9fcad8b0271b812e711c2cd62930e668f5ae63d342a1f128439b6c0  miniapp-execution-offline-deps-2026-11-21.zip.001
 70efa3c3cd11b7b16845e17a4c12ce6f2346b6c3124c97c53822903b9403cbfb  miniapp-execution-offline-deps-2026-11-21.zip.002
 b118d4a8ed38042feff5bb89f1518891668d6fc40746c24d76582cdb7ed19b32  miniapp-execution-offline-deps-2026-11-21.zip.003
