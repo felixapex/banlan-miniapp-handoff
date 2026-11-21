@@ -1,0 +1,23 @@
+[project]
+name = "matbox-mobile-app-collector"
+version = "1.0.0"
+description = "Separate Android and iOS Appium collectors with a shared evidence core"
+requires-python = ">=3.11"
+dependencies = []
+
+[project.scripts]
+android-collector = "android_collector.cli:main"
+ios-collector = "ios_collector.cli:main"
+miniapp-collector = "miniapp_collector.cli:main"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["collector_core*", "android_collector*", "ios_collector*", "miniapp_collector*"]
+exclude = ["tests*", "contracts*"]

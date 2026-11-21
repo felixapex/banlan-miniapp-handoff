@@ -1,0 +1,345 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://matbox.ai/schemas/mobile-evidence-1.1.json",
+  "title": "Mobile Evidence 1.1",
+  "type": "object",
+  "required": [
+    "app_id",
+    "app_name",
+    "platform",
+    "app_version",
+    "capture_source",
+    "screens",
+    "flows",
+    "schema_version"
+  ],
+  "properties": {
+    "app_id": {
+      "type": "string"
+    },
+    "app_name": {
+      "type": "string"
+    },
+    "platform": {
+      "enum": [
+        "android",
+        "ios",
+        "web",
+        "unknown"
+      ]
+    },
+    "app_version": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "capture_source": {
+      "type": "string"
+    },
+    "screens": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "screen_id",
+          "state_id",
+          "width",
+          "height",
+          "screenshot_path",
+          "screenshot_sha256",
+          "ui_tree_path",
+          "elements",
+          "interactions"
+        ],
+        "properties": {
+          "screen_id": {
+            "type": "string"
+          },
+          "state_id": {
+            "type": "string"
+          },
+          "width": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "height": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "screenshot_path": {
+            "type": "string"
+          },
+          "screenshot_sha256": {
+            "type": "string"
+          },
+          "ui_tree_path": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "elements": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "evidence_id",
+                "role",
+                "text",
+                "bounds",
+                "enabled",
+                "selected",
+                "visible"
+              ],
+              "properties": {
+                "evidence_id": {
+                  "type": "string"
+                },
+                "role": {
+                  "type": "string"
+                },
+                "text": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "bounds": {
+                  "type": "object",
+                  "required": [
+                    "x",
+                    "y",
+                    "width",
+                    "height"
+                  ],
+                  "properties": {
+                    "x": {
+                      "type": "integer"
+                    },
+                    "y": {
+                      "type": "integer"
+                    },
+                    "width": {
+                      "type": "integer"
+                    },
+                    "height": {
+                      "type": "integer"
+                    }
+                  },
+                  "additionalProperties": false
+                },
+                "enabled": {
+                  "type": "boolean"
+                },
+                "selected": {
+                  "type": "boolean"
+                },
+                "visible": {
+                  "type": "boolean"
+                },
+                "accessibility_id": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "parent_id": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "style": {
+                  "type": [
+                    "object",
+                    "null"
+                  ],
+                  "properties": {
+                    "background_color": {
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    },
+                    "text_color": {
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    },
+                    "font_size": {
+                      "type": [
+                        "number",
+                        "null"
+                      ]
+                    },
+                    "font_weight": {
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    },
+                    "corner_radius": {
+                      "type": [
+                        "number",
+                        "null"
+                      ]
+                    },
+                    "border_color": {
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    },
+                    "border_width": {
+                      "type": [
+                        "number",
+                        "null"
+                      ]
+                    },
+                    "opacity": {
+                      "type": [
+                        "number",
+                        "null"
+                      ]
+                    }
+                  },
+                  "additionalProperties": false
+                }
+              },
+              "additionalProperties": false
+            }
+          },
+          "interactions": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "kind"
+              ],
+              "properties": {
+                "kind": {
+                  "type": "string"
+                },
+                "target_element_id": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "payload": {
+                  "type": "object"
+                },
+                "result_screen_id": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "result_state_id": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                }
+              },
+              "additionalProperties": false
+            }
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "flows": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "flow_id",
+          "name",
+          "start_screen_id",
+          "steps"
+        ],
+        "properties": {
+          "flow_id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "start_screen_id": {
+            "type": "string"
+          },
+          "steps": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "source_screen_id",
+                "source_state_id",
+                "interaction",
+                "target_screen_id",
+                "target_state_id"
+              ],
+              "properties": {
+                "source_screen_id": {
+                  "type": "string"
+                },
+                "source_state_id": {
+                  "type": "string"
+                },
+                "interaction": {
+                  "type": "object",
+                  "required": [
+                    "kind"
+                  ],
+                  "properties": {
+                    "kind": {
+                      "type": "string"
+                    },
+                    "target_element_id": {
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    },
+                    "payload": {
+                      "type": "object"
+                    },
+                    "result_screen_id": {
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    },
+                    "result_state_id": {
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    }
+                  },
+                  "additionalProperties": false
+                },
+                "target_screen_id": {
+                  "type": "string"
+                },
+                "target_state_id": {
+                  "type": "string"
+                }
+              },
+              "additionalProperties": false
+            }
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "schema_version": {
+      "type": "string",
+      "pattern": "^1\\."
+    }
+  },
+  "additionalProperties": false
+}
